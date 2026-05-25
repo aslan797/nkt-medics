@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация товаров в Национальном каталоге РК (НКТ) — nkt.medics.kz</title>
-    <meta name="description" content="Подготовим ваши товары для Национального каталога РК: подбор кодов ТНВЭД и ОКТРУ, оформление NTIN, подача через официальный API. Соответствие требованиям к 1 июля 2026.">
+    <meta name="description" content="Подготовим ваши товары для Национального каталога РК: подбор кодов ТНВЭД и ОКТРУ, оформление NTIN, официальная подача заявок. Соответствие требованиям к 1 июля 2026.">
     <meta name="keywords" content="НКТ Казахстан, регистрация товаров НКТ, Национальный каталог РК, NTIN, ТНВЭД, ОКТРУ, ЭСФ, регистрация в НКТ для ИП и ТОО">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nkt.medics.kz/">
@@ -47,7 +47,7 @@
         {"@type": "Question", "name": "Кто обязан регистрировать товары в НКТ?",
          "acceptedAnswer": {"@type": "Answer", "text": "Все, кто продаёт товары в Казахстане: импортёры, отечественные производители, оптовая и розничная торговля, ИП и ТОО на любом режиме налогообложения."}},
         {"@type": "Question", "name": "Как происходит регистрация?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Вы передаёте нам список товаров. Мы подбираем правильные коды ТНВЭД и ОКТРУ для каждой позиции, оформляем заявки через официальный API НКТ и передаём вам готовые NTIN-коды для использования в ЭСФ."}}
+         "acceptedAnswer": {"@type": "Answer", "text": "Вы передаёте нам список товаров. Мы подбираем правильные коды ТНВЭД и ОКТРУ для каждой позиции, оформляем заявки в официальной системе НКТ и передаём вам готовые NTIN-коды для использования в ЭСФ."}}
       ]
     }
     </script>
@@ -127,12 +127,20 @@
         @media (max-width: 640px) { .header-phone { display: none; } }
 
         /* HERO */
-        .hero { padding: 84px 0 64px; }
+        .hero {
+            padding: 100px 0 84px;
+            color: white;
+            background:
+                linear-gradient(135deg, rgba(8,15,28,0.78) 0%, rgba(8,15,28,0.55) 60%, rgba(8,15,28,0.7) 100%),
+                url('warehouse.jpg') center/cover no-repeat;
+            background-attachment: scroll;
+        }
         .hero-inner { max-width: 760px; }
         .eyebrow {
             display: inline-block;
-            color: var(--accent-dark);
-            background: var(--accent-soft);
+            color: #6ee7b7;
+            background: rgba(16,185,129,0.18);
+            border: 1px solid rgba(110,231,183,0.3);
             font-size: 0.82rem;
             font-weight: 600;
             padding: 5px 12px;
@@ -146,11 +154,11 @@
             line-height: 1.1;
             letter-spacing: -1.2px;
             margin-bottom: 20px;
-            color: var(--text);
+            color: white;
         }
         .hero-sub {
             font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-            color: var(--text-soft);
+            color: rgba(255,255,255,0.82);
             margin-bottom: 32px;
             max-width: 640px;
             line-height: 1.55;
@@ -190,11 +198,15 @@
             display: flex;
             flex-wrap: wrap;
             gap: 24px 36px;
-            color: var(--muted);
+            color: rgba(255,255,255,0.7);
             font-size: 0.9rem;
         }
         .hero-meta div { display: flex; align-items: center; gap: 8px; }
-        .hero-meta strong { color: var(--text); font-weight: 600; }
+        .hero-meta strong { color: white; font-weight: 600; }
+        .hero .btn-primary { background: var(--accent); }
+        .hero .btn-primary:hover { background: var(--accent-dark); }
+        .hero .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+        .hero .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.05); }
 
         /* SECTION COMMON */
         section { padding: 72px 0; }
