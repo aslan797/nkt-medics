@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация товаров в Национальном каталоге РК (НКТ) — nkt.medics.kz</title>
+    <meta name="description" content="Подготовим ваши товары для Национального каталога РК: подбор кодов ТНВЭД и ОКТРУ, оформление NTIN, подача через официальный API. Соответствие требованиям к 1 июля 2026.">
+    <meta name="keywords" content="НКТ Казахстан, регистрация товаров НКТ, Национальный каталог РК, NTIN, ТНВЭД, ОКТРУ, ЭСФ, регистрация в НКТ для ИП и ТОО">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nkt.medics.kz/">
+
+    <meta property="og:title" content="Регистрация товаров в Национальном каталоге РК">
+    <meta property="og:description" content="Подберём коды ТНВЭД и ОКТРУ, оформим NTIN. Соответствие требованиям НКТ к 1 июля 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nkt.medics.kz/">
+    <meta property="og:locale" content="ru_KZ">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "nkt.medics.kz — Регистрация товаров в НКТ Казахстана",
+      "url": "https://nkt.medics.kz/",
+      "telephone": "+77077040064",
+      "areaServed": {"@type": "Country", "name": "Казахстан"},
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "10:00", "closes": "22:00"
+      }],
+      "description": "Регистрация товаров в Национальном каталоге товаров (НКТ) Республики Казахстан. Подбор кодов ТНВЭД и ОКТРУ, получение NTIN, подача через API."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое НКТ?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Национальный каталог товаров — единый государственный реестр товаров в Казахстане. Каждый товар получает уникальный код NTIN, который указывается в электронных счетах-фактурах (ЭСФ) и сопроводительных накладных (СНТ)."}},
+        {"@type": "Question", "name": "С какой даты регистрация в НКТ обязательна?",
+         "acceptedAnswer": {"@type": "Answer", "text": "С 1 июля 2026 года. До этой даты — период опытной эксплуатации без штрафов. После этой даты ошибки в поле НКТ в ЭСФ станут основанием для отказа в приёме счетов и проблем с зачётом НДС."}},
+        {"@type": "Question", "name": "Кто обязан регистрировать товары в НКТ?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Все, кто продаёт товары в Казахстане: импортёры, отечественные производители, оптовая и розничная торговля, ИП и ТОО на любом режиме налогообложения."}},
+        {"@type": "Question", "name": "Как происходит регистрация?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Вы передаёте нам список товаров. Мы подбираем правильные коды ТНВЭД и ОКТРУ для каждой позиции, оформляем заявки через официальный API НКТ и передаём вам готовые NTIN-коды для использования в ЭСФ."}}
+      ]
+    }
+    </script>
+
+    <style>
+        *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f7f8fa;
+            --bg-section: #fafbfc;
+            --text: #0f1419;
+            --text-soft: #4a5260;
+            --muted: #8b94a3;
+            --border: #e8ebf0;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --accent-soft: #ecfdf5;
+            --radius: 10px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        @media (max-width: 640px) { body { padding-bottom: 76px; } }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        .header-right { display: flex; align-items: center; gap: 14px; }
+        .header-phone {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-variant-numeric: tabular-nums;
+        }
+        .header-phone:hover { color: var(--text); }
+        .btn-wa-header {
+            background: var(--accent);
+            color: white;
+            padding: 9px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.15s;
+        }
+        .btn-wa-header:hover { background: var(--accent-dark); }
+        @media (max-width: 640px) { .header-phone { display: none; } }
+
+        /* HERO */
+        .hero { padding: 84px 0 64px; }
+        .hero-inner { max-width: 760px; }
+        .eyebrow {
+            display: inline-block;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+            letter-spacing: 0.2px;
+        }
+        h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1.2px;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        .hero-sub {
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            color: var(--text-soft);
+            margin-bottom: 32px;
+            max-width: 640px;
+            line-height: 1.55;
+        }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .btn-primary {
+            background: var(--text);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover { background: #1f2937; transform: translateY(-1px); }
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary:hover { border-color: var(--text); }
+        .hero-meta {
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 36px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .hero-meta div { display: flex; align-items: center; gap: 8px; }
+        .hero-meta strong { color: var(--text); font-weight: 600; }
+
+        /* SECTION COMMON */
+        section { padding: 72px 0; }
+        section.alt { background: var(--bg-section); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-header { margin-bottom: 48px; max-width: 640px; }
+        section h2 {
+            font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        section .lead { color: var(--text-soft); font-size: 1.05rem; line-height: 1.6; }
+
+        /* PROBLEM */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .problem-item {
+            padding: 28px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .problem-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .problem-item p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        /* HOW */
+        .steps { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        @media (min-width: 720px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+        .step {
+            background: white;
+            padding: 32px 28px;
+        }
+        .step-num {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            letter-spacing: 1.2px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .step p { color: var(--text-soft); font-size: 0.93rem; line-height: 1.55; }
+
+        /* FOR WHOM */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .audience-item {
+            padding: 20px 24px;
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+        }
+        .audience-item strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 4px; }
+        .audience-item span { color: var(--text-soft); font-size: 0.92rem; }
+
+        /* FAQ */
+        .faq-list { display: grid; gap: 8px; max-width: 760px; }
+        .faq-list details {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            transition: border-color 0.15s;
+        }
+        .faq-list details[open] { border-color: var(--text-soft); }
+        .faq-list summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        .faq-list summary::-webkit-details-marker { display: none; }
+        .faq-list summary::after {
+            content: "+";
+            color: var(--muted);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1;
+            transition: transform 0.15s;
+        }
+        .faq-list details[open] summary::after { content: "−"; }
+        .faq-list details p { color: var(--text-soft); margin-top: 12px; line-height: 1.6; font-size: 0.95rem; }
+
+        /* CTA SECTION */
+        .cta-card {
+            background: var(--text);
+            color: white;
+            border-radius: 14px;
+            padding: 56px 48px;
+            text-align: center;
+        }
+        .cta-card h2 { color: white; margin-bottom: 12px; }
+        .cta-card p { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-card .hero-cta { justify-content: center; }
+        .cta-card .btn-primary { background: var(--accent); color: white; }
+        .cta-card .btn-primary:hover { background: var(--accent-dark); }
+        .cta-card .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.25); }
+        .cta-card .btn-secondary:hover { border-color: white; }
+        @media (max-width: 640px) {
+            .cta-card { padding: 40px 24px; }
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 32px 0 40px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+        footer .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        /* MOBILE BOTTOM BAR */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 10px 12px;
+            gap: 8px;
+            z-index: 50;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.04);
+        }
+        .mobile-cta a {
+            flex: 1;
+            text-align: center;
+            padding: 13px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .m-call { background: var(--bg-soft); color: var(--text); border: 1px solid var(--border); }
+        .m-wa { background: var(--accent); color: white; }
+        @media (max-width: 640px) { .mobile-cta { display: flex; } }
+    </style>
+
+    <!-- Google Analytics 4 + Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ5JMTBK94"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TJ5JMTBK94', { 'site_name': 'nkt.medics.kz' });
+      gtag('config', 'AW-18038117824');
+
+      (function(){
+        var CALL_LABEL = 'AW-18038117824/_Uy7CPGJj7IcEMCrn5lD';
+        var WA_LABEL   = 'AW-18038117824/9u7UCPSJj7IcEMCrn5lD';
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a');
+          if (!a) return;
+          var href = a.getAttribute('href') || '';
+          var cls = a.className || '';
+          if (href.indexOf('tel:') === 0) {
+            gtag('event', 'call_click', {transport_type:'beacon', site:'nkt.medics.kz', link_url:href, link_classes:cls});
+            gtag('event', 'conversion', {send_to:CALL_LABEL, transport_type:'beacon'});
+          } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+            gtag('event', 'wa_click', {transport_type:'beacon', site:'nkt.medics.kz', link_url:href, link_classes:cls});
+            gtag('event', 'conversion', {send_to:WA_LABEL, transport_type:'beacon'});
+          }
+        });
+      })();
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="/" class="logo">nkt<span>.medics.kz</span></a>
+        <div class="header-right">
+            <a href="tel:+77077040064" class="header-phone">+7 707 704 00 64</a>
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B%20%D0%B2%20%D0%BD%D0%BA%D1%82" class="btn-wa-header">Написать в WhatsApp</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container hero-inner">
+        <span class="eyebrow">Соответствие требованиям НКТ к 1 июля 2026</span>
+        <h1>Регистрация товаров в Национальном каталоге Республики Казахстан</h1>
+        <p class="hero-sub">Подберём коды ТНВЭД и ОКТРУ для каждой позиции, оформим заявки через официальный API, передадим вам готовые NTIN для использования в ЭСФ.</p>
+        <div class="hero-cta">
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B%20%D0%B2%20%D0%BD%D0%BA%D1%82" class="btn-primary">Получить расчёт стоимости</a>
+            <a href="tel:+77077040064" class="btn-secondary">+7 707 704 00 64</a>
+        </div>
+        <div class="hero-meta">
+            <div><strong>Работаем</strong> через официальный API НКТ</div>
+            <div><strong>Поддержка</strong> ИП и ТОО на любом режиме</div>
+            <div><strong>Закрывающие</strong> документы для ТОО</div>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>Что меняется с 1 июля 2026</h2>
+            <p class="lead">Период опытной эксплуатации заканчивается. После этой даты товары без корректного кода НКТ создают проблемы по всей цепочке продаж.</p>
+        </div>
+        <div class="problem-grid">
+            <article class="problem-item">
+                <h3>ЭСФ без НКТ-кода</h3>
+                <p>Электронные счета-фактуры с ошибками в поле НКТ не будут приниматься налоговой системой.</p>
+            </article>
+            <article class="problem-item">
+                <h3>Проблемы с зачётом НДС</h3>
+                <p>Ваши покупатели не смогут поставить НДС к зачёту по таким счетам — это снижает их интерес к работе с вами.</p>
+            </article>
+            <article class="problem-item">
+                <h3>Маркетплейсы и сети</h3>
+                <p>Kaspi, крупные сети и торговые площадки требуют валидные NTIN для размещения и принятия товара.</p>
+            </article>
+            <article class="problem-item">
+                <h3>Таможня и СНТ</h3>
+                <p>При оформлении сопроводительных накладных и таможенных деклараций код НКТ становится обязательным.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2>Как мы работаем</h2>
+            <p class="lead">Прозрачный процесс — от получения списка товаров до выдачи готовых NTIN-кодов.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">Шаг 1</div>
+                <h3>Получаем список</h3>
+                <p>Принимаем Excel, фото этикеток, фотографии прайс-листа — что есть, то и работаем.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">Шаг 2</div>
+                <h3>Согласуем стоимость</h3>
+                <p>Считаем по количеству позиций и сложности подбора кодов. Оплата после согласования.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">Шаг 3</div>
+                <h3>Регистрируем</h3>
+                <p>Подбираем ТНВЭД и ОКТРУ под каждую позицию, оформляем заявки через официальный API НКТ.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">Шаг 4</div>
+                <h3>Передаём NTIN</h3>
+                <p>Высылаем готовый файл с NTIN-кодами для каждого товара и закрывающие документы для ТОО.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>Для кого</h2>
+            <p class="lead">Услуга подойдёт всем, кто обязан регистрировать товары в НКТ к 1 июля 2026.</p>
+        </div>
+        <div class="audience-grid">
+            <div class="audience-item">
+                <strong>ИП и ТОО</strong>
+                <span>На упрощёнке, патенте, ОУР, розничном налоге</span>
+            </div>
+            <div class="audience-item">
+                <strong>Импортёры</strong>
+                <span>Товары из Китая, России, Турции, ЕАЭС</span>
+            </div>
+            <div class="audience-item">
+                <strong>Производители</strong>
+                <span>Отечественное производство любых категорий</span>
+            </div>
+            <div class="audience-item">
+                <strong>Селлеры маркетплейсов</strong>
+                <span>Kaspi, Wildberries, Ozon, Halyk Market</span>
+            </div>
+            <div class="audience-item">
+                <strong>Оптовая торговля</strong>
+                <span>Дистрибьюторы и поставщики</span>
+            </div>
+            <div class="audience-item">
+                <strong>Розничные магазины</strong>
+                <span>Офлайн-точки и интернет-магазины</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2>Частые вопросы</h2>
+            <p class="lead">Если не нашли ответ — напишите в WhatsApp.</p>
+        </div>
+        <div class="faq-list">
+            <details>
+                <summary>Что такое НКТ и зачем он нужен?</summary>
+                <p>Национальный каталог товаров — единый государственный реестр товаров в Казахстане. Каждый товар получает уникальный код NTIN, который указывается в электронных счетах-фактурах (ЭСФ) и сопроводительных накладных (СНТ). Это нужно для прозрачности оборота от производителя до магазина.</p>
+            </details>
+            <details>
+                <summary>С какой даты регистрация в НКТ становится обязательной?</summary>
+                <p>С 1 июля 2026 года. До этой даты действует период опытной эксплуатации без штрафов. После 1 июля ошибки в поле НКТ в ЭСФ станут основанием для отказа в приёме счетов и проблем с зачётом НДС.</p>
+            </details>
+            <details>
+                <summary>Кто обязан регистрироваться в НКТ?</summary>
+                <p>Все, кто продаёт товары в Казахстане: импортёры (их дедлайн был 1 марта), крупные торговые сети (1 апреля), малый и микробизнес (1 июля 2026). Касается ИП и ТОО на любом режиме налогообложения.</p>
+            </details>
+            <details>
+                <summary>Сколько занимает регистрация одной позиции?</summary>
+                <p>Зависит от категории и наличия данных. Стандартные позиции с понятным описанием и категорией — в течение рабочего дня. Сложные товары с подбором редких категорий ОКТРУ — до нескольких дней. Точный срок согласуем после получения списка.</p>
+            </details>
+            <details>
+                <summary>Что нужно прислать для расчёта?</summary>
+                <p>Минимум — список товаров с наименованиями. Идеально — Excel с колонками: наименование, бренд, страна происхождения, штрихкод (если есть), краткое описание. Можно прислать фото этикеток или прайс — разберём.</p>
+            </details>
+            <details>
+                <summary>Как происходит оплата?</summary>
+                <p>После согласования сметы выставляем счёт через Каспи Бизнес. Для ТОО предоставляем закрывающие документы (акт + ЭСФ). Условия оплаты согласуем индивидуально.</p>
+            </details>
+            <details>
+                <summary>Что если у меня нет полного описания товара или штрихкода?</summary>
+                <p>Не критично. Подбираем правильные коды ТНВЭД и ОКТРУ по наименованию, фото и категории. Если позиция спорная — согласуем с вами перед регистрацией.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="cta-card">
+            <h2>Узнайте стоимость для вашего каталога</h2>
+            <p>Пришлите список товаров — посчитаем сроки и стоимость в течение рабочего дня.</p>
+            <div class="hero-cta">
+                <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B%20%D0%B2%20%D0%BD%D0%BA%D1%82" class="btn-primary">Получить расчёт в WhatsApp</a>
+                <a href="tel:+77077040064" class="btn-secondary">+7 707 704 00 64</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>© 2026 nkt.medics.kz — Регистрация товаров в НКТ Республики Казахстан</div>
+        <div>
+            <a href="tel:+77077040064">+7 707 704 00 64</a> ·
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B%20%D0%B2%20%D0%BD%D0%BA%D1%82">WhatsApp</a> ·
+            10:00–22:00
+        </div>
+    </div>
+</footer>
+
+<div class="mobile-cta">
+    <a href="tel:+77077040064" class="m-call">Позвонить</a>
+    <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B%20%D0%B2%20%D0%BD%D0%BA%D1%82" class="m-wa">Написать в WhatsApp</a>
+</div>
+
+</body>
+</html>
