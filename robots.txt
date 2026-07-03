@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nkt.medics.kz/sitemap.xml
+Sitemap: https://catalogpro.kz/sitemap.xml
