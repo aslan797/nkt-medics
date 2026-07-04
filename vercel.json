@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "nkt.medics.kz" }],
+      "destination": "https://catalogpro.kz/:path*",
+      "permanent": true
+    }
+  ]
+}
