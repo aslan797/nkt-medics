@@ -49,7 +49,7 @@ module.exports = async (req, res) => {
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.SHEET_ID,
       range: `'${process.env.SHEET_TAB}'!A:I`,
-      valueInputOption: 'USER_ENTERED',
+      valueInputOption: 'RAW',
       requestBody: { values: [[now, name, phone, count, category, system, comment, source, ua]] }
     });
   } catch (e) {
