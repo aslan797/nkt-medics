@@ -159,6 +159,12 @@
             text-decoration: none;
         }
         .logo span { color: var(--accent); }
+        .header-left { display: flex; align-items: center; gap: 28px; }
+        .nav { display: flex; gap: 22px; }
+        .nav a { color: var(--text-soft); text-decoration: none; font-weight: 600; font-size: 0.92rem; }
+        .nav a:hover { color: var(--text); }
+        .nav a.active { color: var(--accent-dark); }
+        @media (max-width: 760px) { .nav { display: none; } }
         .header-right { display: flex; align-items: center; gap: 14px; }
         .header-phone {
             color: var(--text-soft);
@@ -413,7 +419,13 @@
 
 <header>
     <div class="container header-inner">
-        <a href="/" class="logo">Catalog<span>Pro</span></a>
+        <div class="header-left">
+            <a href="/" class="logo">Catalog<span>Pro</span></a>
+            <nav class="nav">
+                <a href="/" class="active">Регистрация в НКТ</a>
+                <a href="/poryadok-v-tovarnoy-baze/">Порядок в базе</a>
+            </nav>
+        </div>
         <div class="header-right">
             <a href="tel:+77077040064" class="header-phone">+7 707 704 00 64</a>
             <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B%20%D0%B2%20%D0%BD%D0%BA%D1%82" class="btn-wa-header">Написать в WhatsApp</a>
@@ -453,7 +465,7 @@
                 <p>Отправляете список товаров — подбираем ТНВЭД и ОКТРУ, оформляем заявки в НКТ и возвращаем готовую таблицу с NTIN. Для тех, кому нужно срочно завести товары.</p>
                 <span class="arrow">Рассчитать стоимость →</span>
             </a>
-            <a href="#zayavka" class="dir-card">
+            <a href="/poryadok-v-tovarnoy-baze/" class="dir-card">
                 <span class="tag">Для большого ассортимента</span>
                 <h3>Порядок в товарной базе</h3>
                 <p>Соберём ваши товары из Excel, 1С, прайсов и Kaspi в одну чистую таблицу: убираем дубли, приводим названия к единому виду, проставляем NTIN, ТНВЭД, ОКТРУ и характеристики.</p>
@@ -742,7 +754,7 @@
     var data = {
       name: form.name.value, phone: form.phone.value, count: form.count.value,
       category: form.category.value, system: form.system.value, comment: form.comment.value,
-      company: form.company.value, source: location.hostname
+      company: form.company.value, source: location.hostname + location.pathname
     };
     if (!data.name.trim() || !data.phone.trim()) { alert('Укажите имя и телефон'); return; }
     btn.disabled = true; btn.textContent = 'Отправляем…';
