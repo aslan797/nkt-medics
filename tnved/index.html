@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подбор кодов ТН ВЭД, ОКТРУ и NTIN под ключ — CatalogPro</title>
+    <meta name="description" content="Подберём коды ТН ВЭД, ОКТРУ и NTIN для ваших товаров. Пришлите список — вернём готовую таблицу для таможни, ЭСФ и продаж. Быстро, без разбирательств в классификаторах.">
+    <meta name="keywords" content="код ТН ВЭД, ТНВЭД код, подобрать код ТН ВЭД, код ОКЭД, ОКТРУ, NTIN код, коды товаров, классификация товаров Казахстан">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#10b981">
+    <link rel="canonical" href="https://catalogpro.kz/tnved/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Подбор кодов ТН ВЭД, ОКТРУ и NTIN под ключ — CatalogPro">
+    <meta property="og:description" content="Пришлите список товаров — вернём готовую таблицу с кодами ТН ВЭД, ОКТРУ и NTIN для таможни, ЭСФ и продаж.">
+    <meta property="og:url" content="https://catalogpro.kz/tnved/">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f7f8fa;
+            --bg-section: #fafbfc;
+            --text: #0f1419;
+            --text-soft: #4a5260;
+            --muted: #8b94a3;
+            --border: #e8ebf0;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --accent-soft: #ecfdf5;
+            --radius: 10px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        @media (max-width: 640px) { body { padding-bottom: 76px; } }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        .header-right { display: flex; align-items: center; gap: 14px; }
+        .header-phone {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-variant-numeric: tabular-nums;
+        }
+        .header-phone:hover { color: var(--text); }
+        .btn-wa-header {
+            background: var(--accent);
+            color: white;
+            padding: 9px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.15s;
+        }
+        .btn-wa-header:hover { background: var(--accent-dark); }
+        @media (max-width: 640px) { .header-phone { display: none; } }
+
+        /* HERO */
+        .hero {
+            padding: 100px 0 84px;
+            color: white;
+            background:
+                linear-gradient(135deg, rgba(8,15,28,0.78) 0%, rgba(8,15,28,0.55) 60%, rgba(8,15,28,0.7) 100%),
+                url('warehouse.jpg') center/cover no-repeat;
+            background-image:
+                linear-gradient(135deg, rgba(8,15,28,0.78) 0%, rgba(8,15,28,0.55) 60%, rgba(8,15,28,0.7) 100%),
+                image-set(url('warehouse.webp') type('image/webp'), url('warehouse.jpg') type('image/jpeg'));
+            background-attachment: scroll;
+        }
+        .prose { max-width: 760px; }
+        .prose h3 { font-size: 19px; margin: 28px 0 8px; color: var(--text); }
+        .prose p { color: var(--text-soft); margin-bottom: 8px; }
+        .prose p + p { margin-top: 8px; }
+        .hero-inner { max-width: 760px; }
+        .eyebrow {
+            display: inline-block;
+            color: #6ee7b7;
+            background: rgba(16,185,129,0.18);
+            border: 1px solid rgba(110,231,183,0.3);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+            letter-spacing: 0.2px;
+        }
+        h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1.2px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .hero-sub {
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            color: rgba(255,255,255,0.82);
+            margin-bottom: 32px;
+            max-width: 640px;
+            line-height: 1.55;
+        }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .btn-primary {
+            background: var(--text);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover { background: #1f2937; transform: translateY(-1px); }
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary:hover { border-color: var(--text); }
+        .hero-meta {
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 36px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        .hero-meta div { display: flex; align-items: center; gap: 8px; }
+        .hero-meta strong { color: white; font-weight: 600; }
+        .hero .btn-primary { background: var(--accent); }
+        .hero .btn-primary:hover { background: var(--accent-dark); }
+        .hero .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+        .hero .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.05); }
+
+        /* SECTION COMMON */
+        section { padding: 72px 0; }
+        section.alt { background: var(--bg-section); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-header { margin-bottom: 48px; max-width: 640px; }
+        section h2 {
+            font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        section .lead { color: var(--text-soft); font-size: 1.05rem; line-height: 1.6; }
+
+        /* PROBLEM */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .problem-item {
+            padding: 28px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .problem-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .problem-item p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        /* HOW */
+        .steps { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        @media (min-width: 720px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+        .step {
+            background: white;
+            padding: 32px 28px;
+        }
+        .step-num {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            letter-spacing: 1.2px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .step p { color: var(--text-soft); font-size: 0.93rem; line-height: 1.55; }
+
+        /* FOR WHOM */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .audience-item {
+            padding: 20px 24px;
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+        }
+        .audience-item strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 4px; }
+        .audience-item span { color: var(--text-soft); font-size: 0.92rem; }
+
+        /* FAQ */
+        .faq-list { display: grid; gap: 8px; max-width: 760px; }
+        .faq-list details {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            transition: border-color 0.15s;
+        }
+        .faq-list details[open] { border-color: var(--text-soft); }
+        .faq-list summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        .faq-list summary::-webkit-details-marker { display: none; }
+        .faq-list summary::after {
+            content: "+";
+            color: var(--muted);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1;
+            transition: transform 0.15s;
+        }
+        .faq-list details[open] summary::after { content: "−"; }
+        .faq-list details p { color: var(--text-soft); margin-top: 12px; line-height: 1.6; font-size: 0.95rem; }
+
+        /* CTA SECTION */
+        .cta-card {
+            background: var(--text);
+            color: white;
+            border-radius: 14px;
+            padding: 56px 48px;
+            text-align: center;
+        }
+        .cta-card h2 { color: white; margin-bottom: 12px; }
+        .cta-card p { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-card .hero-cta { justify-content: center; }
+        .cta-card .btn-primary { background: var(--accent); color: white; }
+        .cta-card .btn-primary:hover { background: var(--accent-dark); }
+        .cta-card .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.25); }
+        .cta-card .btn-secondary:hover { border-color: white; }
+        @media (max-width: 640px) {
+            .cta-card { padding: 40px 24px; }
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 32px 0 40px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+        footer .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        /* MOBILE BOTTOM BAR */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 10px 12px;
+            gap: 8px;
+            z-index: 50;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.04);
+        }
+        .mobile-cta a {
+            flex: 1;
+            text-align: center;
+            padding: 13px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .m-call { background: var(--bg-soft); color: var(--text); border: 1px solid var(--border); }
+        .m-wa { background: var(--accent); color: white; }
+        @media (max-width: 640px) { .mobile-cta { display: flex; } }
+        /* LEAD FORM (врезка) */
+        .form-card { background: var(--text); color: white; border-radius: 14px; padding: 48px; }
+        .form-card h2 { color: white; margin-bottom: 8px; }
+        .form-card .lead-sub { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 560px; }
+        .lead-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .lead-form .full { grid-column: 1 / -1; }
+        .lead-form label { display: block; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 6px; }
+        .lead-form input, .lead-form select, .lead-form textarea {
+            width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.06); color: white; font-size: 0.95rem; font-family: inherit;
+        }
+        .lead-form input::placeholder, .lead-form textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .lead-form input:focus, .lead-form select:focus, .lead-form textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.1); }
+        .lead-form select { appearance: none; }
+        .lead-form select option { color: #0f1419; }
+        .lead-form textarea { resize: vertical; min-height: 72px; }
+        .lead-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
+        .lead-form button {
+            grid-column: 1 / -1; background: var(--accent); color: white; border: none; padding: 15px;
+            border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s;
+        }
+        .lead-form button:hover { background: var(--accent-dark); }
+        .lead-form button:disabled { opacity: 0.6; cursor: default; }
+        .form-alt { margin-top: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+        .form-alt a { color: #6ee7b7; text-decoration: none; font-weight: 600; }
+        .form-ok { display: none; text-align: center; padding: 24px 0; }
+        .form-ok h3 { color: white; font-size: 1.5rem; margin-bottom: 8px; }
+        .form-ok p { color: rgba(255,255,255,0.75); }
+        @media (max-width: 640px) { .lead-form { grid-template-columns: 1fr; } .form-card { padding: 32px 22px; } }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="/tnved/" class="logo">Catalog<span>Pro</span></a>
+        <div class="header-right">
+            <a href="tel:+77077040064" class="header-phone">+7 707 704 00 64</a>
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%A2%D0%9D%20%D0%92%D0%AD%D0%94%20/%20%D0%9E%D0%9A%D0%A2%D0%A0%D0%A3%20/%20NTIN%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%20___%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%3A%20___" class="btn-wa-header">Написать в WhatsApp</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="eyebrow">Товарные коды под ключ</div>
+        <h1>Подберём коды ТН ВЭД, ОКТРУ и NTIN для ваших товаров</h1>
+        <p class="hero-sub">Пришлите список товаров — вернём готовую таблицу с кодами для таможни, ЭСФ и продаж. Без самостоятельных разбирательств в классификаторах и ошибок.</p>
+        <div class="hero-cta">
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%A2%D0%9D%20%D0%92%D0%AD%D0%94%20/%20%D0%9E%D0%9A%D0%A2%D0%A0%D0%A3%20/%20NTIN%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%20___%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%3A%20___" class="btn-primary">Получить расчёт стоимости</a>
+            <a href="tel:+77077040064" class="btn-secondary">+7 707 704 00 64</a>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <h2>Что вы получите</h2>
+        <div class="grid-3">
+            <div class="feature"><h3>Коды ТН ВЭД</h3><p>Правильная товарная позиция для таможни и ВЭД — без риска ошибочной классификации.</p></div>
+            <div class="feature"><h3>Коды ОКТРУ</h3><p>Классификатор продукции для карточек товаров и отчётности.</p></div>
+            <div class="feature"><h3>Коды NTIN</h3><p>Идентификаторы товаров для продаж, ЭСФ и маркетплейсов.</p></div>
+            <div class="feature"><h3>Готовая таблица</h3><p>Excel со всеми кодами по каждому товару — сразу в работу.</p></div>
+            <div class="feature"><h3>Проверка категорий</h3><p>Сверим соответствие названий и кодов, уберём типовые ошибки.</p></div>
+            <div class="feature"><h3>Консультация</h3><p>Подскажем, какие коды нужны именно под вашу задачу.</p></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Как это работает</h2>
+        <div class="grid-4">
+            <div class="step"><span class="step-n">1</span><h3>Присылаете список</h3><p>Excel, прайс или фото товаров — как удобно.</p></div>
+            <div class="step"><span class="step-n">2</span><h3>Подбираем коды</h3><p>Определяем ТН ВЭД, ОКТРУ и NTIN по каждой позиции.</p></div>
+            <div class="step"><span class="step-n">3</span><h3>Проверяем</h3><p>Сверяем категории и корректность, убираем ошибки.</p></div>
+            <div class="step"><span class="step-n">4</span><h3>Отдаём таблицу</h3><p>Готовый файл с кодами — обычно за несколько дней.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <h2>Для кого</h2>
+        <div class="grid-3">
+            <div class="feature"><h3>Импортёры и ВЭД</h3><p>Коды ТН ВЭД для таможенного оформления.</p></div>
+            <div class="feature"><h3>Продавцы и магазины</h3><p>Коды для ЭСФ и легальных продаж.</p></div>
+            <div class="feature"><h3>Селлеры маркетплейсов</h3><p>NTIN и коды для Kaspi, Wildberries, Ozon.</p></div>
+            <div class="feature"><h3>Бухгалтеры</h3><p>Готовые коды для карточек и отчётности.</p></div>
+            <div class="feature"><h3>Производители</h3><p>ОКТРУ и NTIN на выпускаемую продукцию.</p></div>
+            <div class="feature"><h3>Дистрибьюторы</h3><p>Коды на весь ассортимент разом.</p></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Какие данные прислать</h2>
+        <ul class="checklist">
+            <li>Список товаров: Excel, прайс, выгрузка из 1С или Kaspi — в любом виде.</li>
+            <li>Названия товаров (и артикулы, если есть).</li>
+            <li>Категорию или назначение товара — если непонятно из названия.</li>
+            <li>Что нужно: коды для таможни, ЭСФ, маркетплейса или всё сразу.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="zayavka">
+    <div class="container">
+        <div class="form-card">
+            <div id="leadFormWrap">
+                <h2>Рассчитать стоимость</h2>
+                <p class="lead-sub">Заполните форму — оценим объём и вернёмся со сметой в течение рабочего дня.</p>
+                <form class="lead-form" id="leadForm" novalidate>
+                    <div><label>Ваше имя *</label><input name="name" type="text" placeholder="Как к вам обращаться" required></div>
+                    <div><label>Телефон / WhatsApp *</label><input name="phone" type="tel" placeholder="+7 707 000 00 00" required></div>
+                    <div><label>Сколько товаров (позиций)</label><input name="count" type="text" placeholder="Напр. 150"></div>
+                    <div><label>Категория товаров</label><input name="category" type="text" placeholder="Косметика, одежда, электроника…"></div>
+                    <div class="full"><label>Какие коды нужны</label>
+                        <select name="system">
+                            <option value="">— выберите —</option>
+                            <option>ТН ВЭД (таможня)</option>
+                            <option>NTIN (продажи/маркетплейс)</option>
+                            <option>ОКТРУ</option>
+                            <option>Все коды сразу</option>
+                            <option>Пока не знаю</option>
+                        </select>
+                    </div>
+                    <div class="full"><label>Комментарий (необязательно)</label><textarea name="comment" placeholder="Коротко о задаче: импорт, ЭСФ, маркетплейс, дедлайн…"></textarea></div>
+                    <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <button type="submit" id="leadBtn">Отправить заявку</button>
+                </form>
+                <p class="form-alt">Или напишите сразу в <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%A2%D0%9D%20%D0%92%D0%AD%D0%94%20/%20%D0%9E%D0%9A%D0%A2%D0%A0%D0%A3%20/%20NTIN%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%20___%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%3A%20___">WhatsApp</a> · +7 707 704 00 64</p>
+            </div>
+            <div class="form-ok" id="leadOk">
+                <h3>Заявка принята ✅</h3>
+                <p>Спасибо! Свяжемся с вами в течение рабочего дня.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container prose">
+        <h2>Частые вопросы</h2>
+        <h3>Чем ТН ВЭД отличается от ОКТРУ и NTIN?</h3>
+        <p>ТН ВЭД — код для таможни и внешней торговли. ОКТРУ — классификатор продукции. NTIN — идентификатор товара для продаж, ЭСФ и маркетплейсов. Часто нужны вместе — мы подбираем все.</p>
+        <h3>Сколько времени занимает?</h3>
+        <p>Обычно несколько рабочих дней — зависит от количества позиций и сложности категорий.</p>
+        <h3>В каком виде присылать товары?</h3>
+        <p>Как удобно: Excel, прайс, выгрузка из 1С или Kaspi, даже фото. Разберём и приведём к нужному виду сами.</p>
+        <h3>Что если ошибётесь в коде?</h3>
+        <p>Мы проверяем соответствие названий и кодов и убираем типовые ошибки. Если категория спорная — согласуем с вами.</p>
+    </div>
+</section>
+
+<section class="prose-wrap">
+    <div class="container">
+        <details class="seo-block">
+            <summary>Подробнее о кодах ТН ВЭД, ОКТРУ и NTIN</summary>
+            <div class="prose">
+                <p>Код ТН ВЭД (Товарная номенклатура внешнеэкономической деятельности) определяет товарную позицию для таможенного оформления и расчёта пошлин. Ошибка в коде ведёт к задержкам на таможне и доначислениям.</p>
+                <p>ОКТРУ — классификатор продукции, используется в карточках товаров и отчётности. NTIN — казахстанский идентификатор товара, нужен для продаж, электронных счетов-фактур (ЭСФ) и работы с маркетплейсами.</p>
+                <p>Подбор кодов вручную требует знания классификаторов и занимает время. Мы делаем это за вас: присылаете список товаров — получаете готовую таблицу с корректными кодами по каждой позиции.</p>
+            </div>
+        </details>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>CatalogPro — подбор товарных кодов ТН ВЭД, ОКТРУ и NTIN под ключ.</p>
+        <p><a href="tel:+77077040064">+7 707 704 00 64</a> · <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%A2%D0%9D%20%D0%92%D0%AD%D0%94%20/%20%D0%9E%D0%9A%D0%A2%D0%A0%D0%A3%20/%20NTIN%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%20___%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%3A%20___">WhatsApp</a></p>
+    </div>
+</footer>
+
+<a href="tel:+77077040064" class="m-call">Позвонить</a>
+<a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%A2%D0%9D%20%D0%92%D0%AD%D0%94%20/%20%D0%9E%D0%9A%D0%A2%D0%A0%D0%A3%20/%20NTIN%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%20___%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%3A%20___" class="m-wa">Написать в WhatsApp</a>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ5JMTBK94"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TJ5JMTBK94', { 'site_name': location.hostname });
+  (function(){
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a'); if (!a) return;
+      var href = a.getAttribute('href') || ''; var cls = a.className || '';
+      var page = location.hostname + location.pathname;
+      if (href.indexOf('tel:') === 0) {
+        gtag('event', 'call_click', {transport_type:'beacon', site:page, link_url:href, link_classes:cls});
+      } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+        gtag('event', 'wa_click', {transport_type:'beacon', site:page, link_url:href, link_classes:cls});
+      }
+    });
+  })();
+</script>
+<script>
+(function(){
+  var form = document.getElementById('leadForm'); if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('leadBtn');
+    var data = { name: form.name.value, phone: form.phone.value, count: form.count.value,
+      category: form.category.value, system: form.system.value, comment: form.comment.value,
+      company: form.company.value, source: location.hostname + location.pathname };
+    if (!data.name.trim() || !data.phone.trim()) { alert('Укажите имя и телефон'); return; }
+    btn.disabled = true; btn.textContent = 'Отправляем…';
+    fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) })
+      .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
+      .then(function(res){
+        if (!res || !res.ok) throw new Error('bad');
+        document.getElementById('leadFormWrap').style.display = 'none';
+        document.getElementById('leadOk').style.display = 'block';
+        if (typeof gtag === 'function') { gtag('event', 'form_submit', { site: location.hostname + location.pathname }); }
+      })
+      .catch(function(){ btn.disabled = false; btn.textContent = 'Отправить заявку';
+        alert('Не удалось отправить. Напишите нам в WhatsApp: +7 707 704 00 64'); });
+  });
+})();
+</script>
+
+</body>
+</html>
