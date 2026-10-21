@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Получить КЗТИН (KZTIN) для госзакупок под ключ — nkt.medics.kz</title>
+    <meta name="description" content="Оформим КЗТИН (KZTIN) на ваши товары: расширенная карточка в Национальном каталоге товаров для поставок по госзакупкам. Нет NTIN — заведём и его. Заявка в WhatsApp.">
+    <meta name="keywords" content="КЗТИН, KZTIN, получить КЗТИН, KZTIN госзакупки, расширенная карточка НКТ, КЗТИН для производителей, NTIN и KZTIN">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#10b981">
+    <link rel="canonical" href="https://nkt.medics.kz/kztin/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Получить КЗТИН (KZTIN) для госзакупок под ключ">
+    <meta property="og:description" content="Оформим расширенную карточку и КЗТИН на ваши товары, чтобы поставка по госконтракту прошла и оплатилась.">
+    <meta property="og:url" content="https://nkt.medics.kz/kztin/">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f7f8fa;
+            --bg-section: #fafbfc;
+            --text: #0f1419;
+            --text-soft: #4a5260;
+            --muted: #8b94a3;
+            --border: #e8ebf0;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --accent-soft: #ecfdf5;
+            --radius: 10px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        @media (max-width: 640px) { body { padding-bottom: 76px; } }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        .header-right { display: flex; align-items: center; gap: 14px; }
+        .header-phone {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-variant-numeric: tabular-nums;
+        }
+        .header-phone:hover { color: var(--text); }
+        .btn-wa-header {
+            background: var(--accent);
+            color: white;
+            padding: 9px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.15s;
+        }
+        .btn-wa-header:hover { background: var(--accent-dark); }
+        @media (max-width: 640px) { .header-phone { display: none; } }
+
+        /* HERO */
+        .hero {
+            padding: 100px 0 84px;
+            color: white;
+            background:
+                linear-gradient(135deg, rgba(8,15,28,0.78) 0%, rgba(8,15,28,0.55) 60%, rgba(8,15,28,0.7) 100%),
+                url('warehouse.jpg') center/cover no-repeat;
+            background-image:
+                linear-gradient(135deg, rgba(8,15,28,0.78) 0%, rgba(8,15,28,0.55) 60%, rgba(8,15,28,0.7) 100%),
+                image-set(url('warehouse.webp') type('image/webp'), url('warehouse.jpg') type('image/jpeg'));
+            background-attachment: scroll;
+        }
+        .prose { max-width: 760px; }
+        .prose h3 { font-size: 19px; margin: 28px 0 8px; color: var(--text); }
+        .prose p { color: var(--text-soft); margin-bottom: 8px; }
+        .prose p + p { margin-top: 8px; }
+        .hero-inner { max-width: 760px; }
+        .eyebrow {
+            display: inline-block;
+            color: #6ee7b7;
+            background: rgba(16,185,129,0.18);
+            border: 1px solid rgba(110,231,183,0.3);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+            letter-spacing: 0.2px;
+        }
+        h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1.2px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .hero-sub {
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            color: rgba(255,255,255,0.82);
+            margin-bottom: 32px;
+            max-width: 640px;
+            line-height: 1.55;
+        }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .btn-primary {
+            background: var(--text);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover { background: #1f2937; transform: translateY(-1px); }
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary:hover { border-color: var(--text); }
+        .hero-meta {
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 36px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        .hero-meta div { display: flex; align-items: center; gap: 8px; }
+        .hero-meta strong { color: white; font-weight: 600; }
+        .hero .btn-primary { background: var(--accent); }
+        .hero .btn-primary:hover { background: var(--accent-dark); }
+        .hero .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+        .hero .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.05); }
+
+        /* SECTION COMMON */
+        section { padding: 72px 0; }
+        section.alt { background: var(--bg-section); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-header { margin-bottom: 48px; max-width: 640px; }
+        section h2 {
+            font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        section .lead { color: var(--text-soft); font-size: 1.05rem; line-height: 1.6; }
+
+        /* PROBLEM */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .problem-item {
+            padding: 28px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .problem-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .problem-item p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        /* HOW */
+        .steps { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        @media (min-width: 720px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+        .step {
+            background: white;
+            padding: 32px 28px;
+        }
+        .step-num {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            letter-spacing: 1.2px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .step p { color: var(--text-soft); font-size: 0.93rem; line-height: 1.55; }
+
+        /* FOR WHOM */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .audience-item {
+            padding: 20px 24px;
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+        }
+        .audience-item strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 4px; }
+        .audience-item span { color: var(--text-soft); font-size: 0.92rem; }
+
+        /* FAQ */
+        .faq-list { display: grid; gap: 8px; max-width: 760px; }
+        .faq-list details {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            transition: border-color 0.15s;
+        }
+        .faq-list details[open] { border-color: var(--text-soft); }
+        .faq-list summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        .faq-list summary::-webkit-details-marker { display: none; }
+        .faq-list summary::after {
+            content: "+";
+            color: var(--muted);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1;
+            transition: transform 0.15s;
+        }
+        .faq-list details[open] summary::after { content: "−"; }
+        .faq-list details p { color: var(--text-soft); margin-top: 12px; line-height: 1.6; font-size: 0.95rem; }
+
+        /* CTA SECTION */
+        .cta-card {
+            background: var(--text);
+            color: white;
+            border-radius: 14px;
+            padding: 56px 48px;
+            text-align: center;
+        }
+        .cta-card h2 { color: white; margin-bottom: 12px; }
+        .cta-card p { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-card .hero-cta { justify-content: center; }
+        .cta-card .btn-primary { background: var(--accent); color: white; }
+        .cta-card .btn-primary:hover { background: var(--accent-dark); }
+        .cta-card .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.25); }
+        .cta-card .btn-secondary:hover { border-color: white; }
+        @media (max-width: 640px) {
+            .cta-card { padding: 40px 24px; }
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 32px 0 40px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+        footer .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        /* MOBILE BOTTOM BAR */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 10px 12px;
+            gap: 8px;
+            z-index: 50;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.04);
+        }
+        .mobile-cta a {
+            flex: 1;
+            text-align: center;
+            padding: 13px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .m-call { background: var(--bg-soft); color: var(--text); border: 1px solid var(--border); }
+        .m-wa { background: var(--accent); color: white; }
+        @media (max-width: 640px) { .mobile-cta { display: flex; } }
+        /* LEAD FORM (врезка) */
+        .form-card { background: var(--text); color: white; border-radius: 14px; padding: 48px; }
+        .form-card h2 { color: white; margin-bottom: 8px; }
+        .form-card .lead-sub { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 560px; }
+        .lead-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .lead-form .full { grid-column: 1 / -1; }
+        .lead-form label { display: block; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 6px; }
+        .lead-form input, .lead-form select, .lead-form textarea {
+            width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.06); color: white; font-size: 0.95rem; font-family: inherit;
+        }
+        .lead-form input::placeholder, .lead-form textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .lead-form input:focus, .lead-form select:focus, .lead-form textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.1); }
+        .lead-form select { appearance: none; }
+        .lead-form select option { color: #0f1419; }
+        .lead-form textarea { resize: vertical; min-height: 72px; }
+        .lead-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
+        .lead-form button {
+            grid-column: 1 / -1; background: var(--accent); color: white; border: none; padding: 15px;
+            border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s;
+        }
+        .lead-form button:hover { background: var(--accent-dark); }
+        .lead-form button:disabled { opacity: 0.6; cursor: default; }
+        .form-alt { margin-top: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+        .form-alt a { color: #6ee7b7; text-decoration: none; font-weight: 600; }
+        .form-ok { display: none; text-align: center; padding: 24px 0; }
+        .form-ok h3 { color: white; font-size: 1.5rem; margin-bottom: 8px; }
+        .form-ok p { color: rgba(255,255,255,0.75); }
+        @media (max-width: 640px) { .lead-form { grid-template-columns: 1fr; } .form-card { padding: 32px 22px; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Зачем нужен КЗТИН, если есть NTIN?","acceptedAnswer":{"@type":"Answer","text":"NTIN достаточно для обычной торговли. Для поставки по госзакупкам в документах на отгрузку указывают и NTIN, и KZTIN — без него сложно закрыть акт приёма-передачи и получить оплату по контракту."}},
+      {"@type":"Question","name":"У товара нет NTIN. Можно сразу КЗТИН?","acceptedAnswer":{"@type":"Answer","text":"Сначала товар регистрируется в НКТ и получает NTIN, затем карточка расширяется до KZTIN. Мы сделаем оба шага."}},
+      {"@type":"Question","name":"Сколько времени занимает?","acceptedAnswer":{"@type":"Answer","text":"Заявку рассматривают до 10 рабочих дней. Подготовку данных мы делаем быстро, чтобы заявку не вернули на доработку."}}
+    ]}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ5JMTBK94"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TJ5JMTBK94', { 'site_name': location.hostname });
+      gtag('config', 'AW-17956622239');
+      (function(){
+        var CALL_LABEL = 'AW-17956622239/JewFCIfcv8ocEJ-fsfJC';
+        var WA_LABEL   = 'AW-17956622239/MVAjCP-LpcocEJ-fsfJC';
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a'); if (!a) return;
+          var href = a.getAttribute('href') || ''; var cls = a.className || '';
+          var page = location.hostname + location.pathname;
+          if (href.indexOf('tel:') === 0) {
+            gtag('event', 'call_click', {transport_type:'beacon', site:page, link_url:href, link_classes:cls});
+            gtag('event', 'conversion', {send_to:CALL_LABEL, transport_type:'beacon'});
+          } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+            gtag('event', 'wa_click', {transport_type:'beacon', site:page, link_url:href, link_classes:cls});
+            gtag('event', 'conversion', {send_to:WA_LABEL, transport_type:'beacon'});
+          }
+        });
+      })();
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="/" class="logo">nkt<span>.medics.kz</span></a>
+        <div class="header-right">
+            <a href="tel:+77077040064" class="header-phone">+7 707 704 00 64</a>
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%9A%D0%97%D0%A2%D0%98%D0%9D%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%9F%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%3A%20___%2C%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D1%83%D0%B6%D0%B5%20NTIN%3A%20___" class="btn-wa-header">Написать в WhatsApp</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="eyebrow">КЗТИН (KZTIN) для поставщиков госзакупок</div>
+        <h1>Оформим КЗТИН на ваши товары под ключ</h1>
+        <p class="hero-sub">Без КЗТИН поставку по госконтракту сложно закрыть и получить оплату. Пришлите список товаров: заполним расширенную карточку в Национальном каталоге товаров и подадим заявку. Нет NTIN — заведём и его.</p>
+        <div class="hero-cta">
+            <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%9A%D0%97%D0%A2%D0%98%D0%9D%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%9F%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%3A%20___%2C%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D1%83%D0%B6%D0%B5%20NTIN%3A%20___" class="btn-primary">Узнать стоимость в WhatsApp</a>
+            <a href="tel:+77077040064" class="btn-secondary">+7 707 704 00 64</a>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <h2>Когда нужен КЗТИН</h2>
+        <div class="grid-3">
+            <div class="feature"><h3>Поставка по госзакупкам</h3><p>В документах на отгрузку указывают NTIN и KZTIN. Без кода заказчик не закроет акт приёма-передачи.</p></div>
+            <div class="feature"><h3>Оплата по контракту</h3><p>Пока акт не подписан, деньги по контракту не приходят. КЗТИН снимает этот стоп.</p></div>
+            <div class="feature"><h3>Реестр отечественных производителей</h3><p>Товар в реестр заявляют только после регистрации в НКТ. Сделаем карточки правильно с первого раза.</p></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Как работаем</h2>
+        <div class="grid-4">
+            <div class="step"><span class="step-n">1</span><h3>Присылаете список</h3><p>Excel, прайс, спецификация к договору — как удобно.</p></div>
+            <div class="step"><span class="step-n">2</span><h3>Проверяем NTIN</h3><p>Смотрим, какие товары уже есть в каталоге, а какие нужно завести.</p></div>
+            <div class="step"><span class="step-n">3</span><h3>Заполняем карточки</h3><p>Характеристики, ОКТРУ, данные производителя — всё, что требует расширенная карточка.</p></div>
+            <div class="step"><span class="step-n">4</span><h3>Подаём и сопровождаем</h3><p>Подаём заявки и доводим до присвоения КЗТИН. Отдаём таблицу с кодами.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <h2>Для кого</h2>
+        <div class="grid-3">
+            <div class="feature"><h3>Производители</h3><p>Казахстанская продукция для госзаказчиков и реестра отечественных производителей.</p></div>
+            <div class="feature"><h3>Поставщики госзакупок</h3><p>Выиграли лот — нужен код к отгрузке.</p></div>
+            <div class="feature"><h3>Дистрибьюторы</h3><p>Карточки сразу на весь ассортимент под контракты.</p></div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Что подготовить</h2>
+        <ul class="checklist">
+            <li>Список товаров с названиями и артикулами.</li>
+            <li>БИН производителя и вашей компании.</li>
+            <li>Характеристики товара: состав, размеры, упаковка, фото — что есть.</li>
+            <li>Номер договора или лота, если поставка уже назначена: подскажем, что сделать первым.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="zayavka">
+    <div class="container">
+        <div class="form-card">
+            <div id="leadFormWrap">
+                <h2>Узнать стоимость</h2>
+                <p class="lead-sub">Оставьте контакты — оценим объём и пришлём расчёт в течение рабочего дня.</p>
+                <form class="lead-form" id="leadForm" novalidate>
+                    <div><label>Ваше имя *</label><input name="name" type="text" placeholder="Как к вам обращаться" required></div>
+                    <div><label>Телефон / WhatsApp *</label><input name="phone" type="tel" placeholder="+7 707 000 00 00" required></div>
+                    <div><label>Сколько товаров (позиций)</label><input name="count" type="text" placeholder="Напр. 20"></div>
+                    <div><label>Категория товаров</label><input name="category" type="text" placeholder="Мебель, спецодежда, стройматериалы…"></div>
+                    <div class="full"><label>Есть ли NTIN</label>
+                        <select name="system">
+                            <option value="">— выберите —</option>
+                            <option>KZTIN: NTIN уже есть</option>
+                            <option>KZTIN: NTIN нет</option>
+                            <option>KZTIN: не знаю</option>
+                        </select>
+                    </div>
+                    <div class="full"><label>Комментарий (необязательно)</label><textarea name="comment" placeholder="Срок поставки, номер лота, что уже сделано…"></textarea></div>
+                    <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <button type="submit" id="leadBtn">Отправить заявку</button>
+                </form>
+                <p class="form-alt">Или напишите сразу в <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%9A%D0%97%D0%A2%D0%98%D0%9D%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%9F%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%3A%20___%2C%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D1%83%D0%B6%D0%B5%20NTIN%3A%20___">WhatsApp</a> · +7 707 704 00 64</p>
+            </div>
+            <div class="form-ok" id="leadOk">
+                <h3>Заявка принята ✅</h3>
+                <p>Спасибо! Свяжемся с вами в течение рабочего дня.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container prose">
+        <h2>Частые вопросы</h2>
+        <h3>Зачем нужен КЗТИН, если есть NTIN?</h3>
+        <p>NTIN достаточно для обычной торговли. Для поставки по госзакупкам в документах на отгрузку указывают и NTIN, и KZTIN — без него сложно закрыть акт приёма-передачи и получить оплату по контракту.</p>
+        <h3>У товара нет NTIN. Можно сразу КЗТИН?</h3>
+        <p>Сначала товар регистрируется в НКТ и получает NTIN, затем карточка расширяется до KZTIN. Мы сделаем оба шага.</p>
+        <h3>Сколько времени занимает?</h3>
+        <p>Заявку рассматривают до 10 рабочих дней. Данные мы готовим быстро и аккуратно, чтобы заявку не вернули на доработку.</p>
+        <h3>Вы государственная организация?</h3>
+        <p>Нет. Мы частный сервис: берём на себя подготовку данных и подачу заявок. Сама регистрация в каталоге бесплатна — вы платите только за нашу работу.</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>nkt.medics.kz — оформление NTIN и КЗТИН под ключ. Частный сервис, не является государственным органом.</p>
+        <p><a href="tel:+77077040064">+7 707 704 00 64</a> · <a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%9A%D0%97%D0%A2%D0%98%D0%9D%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%9F%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%3A%20___%2C%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D1%83%D0%B6%D0%B5%20NTIN%3A%20___">WhatsApp</a> · <a href="/">Регистрация в НКТ</a></p>
+    </div>
+</footer>
+
+<a href="tel:+77077040064" class="m-call">Позвонить</a>
+<a href="https://wa.me/77077040064?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%9A%D0%97%D0%A2%D0%98%D0%9D%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2.%20%D0%9F%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%3A%20___%2C%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D1%83%D0%B6%D0%B5%20NTIN%3A%20___" class="m-wa">Написать в WhatsApp</a>
+
+<script>
+(function(){
+  var form = document.getElementById('leadForm'); if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('leadBtn');
+    var data = { name: form.name.value, phone: form.phone.value, count: form.count.value,
+      category: form.category.value, system: form.system.value, comment: form.comment.value,
+      company: form.company.value, source: location.hostname + location.pathname };
+    if (!data.name.trim() || !data.phone.trim()) { alert('Укажите имя и телефон'); return; }
+    btn.disabled = true; btn.textContent = 'Отправляем…';
+    fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) })
+      .then(function(r){ return r.json().catch(function(){ return { ok: r.ok }; }); })
+      .then(function(res){
+        if (!res || !res.ok) throw new Error('bad');
+        document.getElementById('leadFormWrap').style.display = 'none';
+        document.getElementById('leadOk').style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit', { site: location.hostname + location.pathname });
+          gtag('event', 'conversion', { send_to: 'AW-17956622239/luYnCKj7psocEJ-fsfJC' });
+        }
+      })
+      .catch(function(){ btn.disabled = false; btn.textContent = 'Отправить заявку';
+        alert('Не удалось отправить. Напишите нам в WhatsApp: +7 707 704 00 64'); });
+  });
+})();
+</script>
+
+</body>
+</html>
